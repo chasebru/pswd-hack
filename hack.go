@@ -1,5 +1,7 @@
 package main
 
-func HackPassword() {
+import "time"
 
+func HackPassword() {
+	time.Sleep(1 * time.Second)
 }

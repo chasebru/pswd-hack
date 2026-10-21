@@ -8,22 +8,31 @@ import (
 )
 
 func main() {
+	var password string
 	// Create a Gin router with default middleware (logger and recovery)
 	router := gin.Default()
-	router.LoadHTMLFiles("html/index.html")
+	router.LoadHTMLFiles("html/index.html", "html/hacking.tmpl")
+
 	// Define a simple GET endpoint
 	router.GET("/", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", nil)
 	})
 
 	router.POST("/submit", func(ctx *gin.Context) {
-		password := ctx.PostForm("password")
+		password = ctx.PostForm("password")
 		fmt.Printf("Password: %s\n", password)
-		ctx.Redirect(http.StatusFound, "/")
+		passwordHash, err := GeneratePassword(password)
+		if err != nil {
+			ctx.Redirect(http.StatusFound, fmt.Sprintf("/error?error=%d", err))
+		}
+		ctx.Redirect(http.StatusFound, fmt.Sprintf("/hacking?hash=%s", passwordHash))
 	})
 
 	router.GET("/hacking", func(ctx *gin.Context) {
-		ctx.HTML(http.StatusOK, "index.html", nil)
+		hash := ctx.Query("hash")
+		ctx.HTML(http.StatusOK, "hacking.tmpl", gin.H{
+			"hash": hash,
+		})
 	})
 
 	// Start server on port 8080 (default)
