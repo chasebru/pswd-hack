@@ -1,7 +1,8 @@
 package main
 
-import "time"
+import "fmt"
 
-func HackPassword() {
-	time.Sleep(1 * time.Second)
+func HackPassword(hash string) string {
+	pswd, _ := GuessDigit(hash)
+	return fmt.Sprintf("%04d", pswd)
 }
