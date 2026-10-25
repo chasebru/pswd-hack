@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jalen's Password Hacker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jalen's Password Hacker</title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    <h1>Jalen's Password Hacker</h1>
+  <main class="panel">
+    <p class="bootline"><span class="prompt">root@security-lab:~$</span> ./initialize_demo <span aria-hidden="true">✓</span></p>
+    <p class="eyebrow">Security lab / 01</p>
+    <h1>Jalen's Password Hacker<span class="cursor" aria-hidden="true"></span></h1>
+    <p>Local password-auditing demo interface.</p>
+    <div class="status">System ready</div>
     <form action="/submit" method="post">
-        <label>Enter Password</label>
-        <input name="password" type="text">
-        <button name="submit-button" type="submit">Submit</button>
+      <label for="password">Test password</label>
+      <input id="password" name="password" type="password" autocomplete="off" placeholder="Enter a test password" required>
+      <label for="password">Enter a memorable password like you are making an account on a website</label>
+      <button name="submit-button" type="submit">Run demo <span aria-hidden="true">→</span></button>
     </form>
+    <div class="creator-footer">
+      <span class="creator-id">
+          <a href="/about">Chase Brubaker</a>
+      </span>
+      <span class="footer-note">Authorized testing only</span>
+    </div>
+  </main>
 </body>
 </html>

@@ -38,7 +38,7 @@ func GuessDigit(hash string) (int32, int64) {
 	const maxPassword int32 = 9999
 	workers := runtime.GOMAXPROCS(0)
 
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 	defer cancel()
 
 	results := make(chan int32, 1)

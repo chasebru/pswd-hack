@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About this project and its creator, Chase Brubaker.">
+  <title>About | Chase Brubaker</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .brand-mark{display:flex;align-items:center;gap:11px;width:fit-content;max-width:100%;margin:0 0 28px;color:var(--text,#e3fff2);text-decoration:none}
+    .brand-glyph{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border:1px solid rgba(66,255,173,.55);border-radius:9px;color:var(--green,#42ffad);background:rgba(66,255,173,.055);font-size:14px;font-weight:900;letter-spacing:-.08em}
+    .brand-boot{display:block;color:var(--green,#42ffad);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+    .brand-name{display:block;margin-top:2px;color:var(--text,#e3fff2);font-size:12px;font-weight:700}
+    .brand-name:before{content:"// ";color:var(--muted,#8aa69c);font-weight:400}
+    .bootline{margin:0 0 18px;color:var(--muted,#8aa69c);font-size:10px;letter-spacing:.06em;overflow-wrap:anywhere}
+    .prompt,.section-index,.editable-space .key,.credit-tag{color:var(--green,#42ffad)}
+    .about-section{margin-top:28px}
+    .section-heading{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--text,#e3fff2);font-size:14px}
+    .section-index{font-size:11px;letter-spacing:.1em}
+    .editable-space{padding:16px;border:1px dashed rgba(66,255,173,.28);border-radius:10px;background:rgba(4,10,9,.42)}
+    .editable-space .key,.credit-tag{display:block;margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.12em}
+    .editable-space p{margin:0;color:var(--muted,#8aa69c)}
+    .credit-card{padding:15px 16px;margin-top:10px;border:1px solid rgba(66,255,173,.18);border-radius:10px;background:rgba(4,10,9,.38)}
+    .credit-card p{margin:0;color:var(--text,#e3fff2);font-size:13px}
+    .placeholder-links{list-style:none;padding:0;margin:12px 0 0}
+    .placeholder-links li{margin-top:8px;color:var(--muted,#8aa69c);font-size:12px;overflow-wrap:anywhere}
+    .placeholder-links li:before{content:"› ";color:var(--green,#42ffad)}
+    .about-actions{margin-top:24px}
+    .about-actions a{display:inline-flex;padding:12px 18px;color:#03110b;background:var(--green,#42ffad);border:1px solid var(--green,#42ffad);border-radius:9px;font-weight:800;text-decoration:none}
+    .creator-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:25px;padding-top:14px;border-top:1px solid rgba(138,166,156,.14);color:#587168;font-size:10px;letter-spacing:.04em}
+    .creator-id{color:var(--green,#42ffad)}.creator-id:before{content:"made_by: ";color:#587168}
+    @media(max-width:420px){.creator-footer{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="panel">
+
+    <p class="bootline"><span class="prompt">root@security-lab:~$</span> cat about.txt ✓</p>
+    <p class="eyebrow">System notes / about</p>
+
+    <section class="about-section">
+      <h2 class="section-heading"><span class="section-index">01</span> About this project</h2>
+      <div class="editable-space">
+        <span class="key">PROJECT OVERVIEW</span>
+        <p>This app was made using the go programing language and html</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2 class="section-heading"><span class="section-index">02</span> Credits & authorship</h2>
+      <div class="credit-card">
+        <span class="credit-tag">FRONTEND DESIGN</span>
+        <p>The design and styling of the frontend were created with assistance from ChatGPT.</p>
+      </div>
+      <div class="credit-card">
+        <span class="credit-tag">THE REST OF THE PROJECT</span>
+        <p>The rest of the project was written by a human author.</p>
+      </div>
+      <div class="credit-card">
+        <span class="credit-tag">The Hash Engine</span>
+        <p>This app uses <a href="https://hashcat.net/hashcat/">Hashcat</a> as its hash engine</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2 class="section-heading"><span class="section-index">03</span> More from me</h2>
+      <div class="editable-space">
+        <span class="key">LINKS / CONTACT / OTHER PROJECTS</span>
+        <ul class="placeholder-links">
+          <li>GitHub — github.com/chasebru/pswd-hack</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="about-actions"><a href="/">← Back to demo</a></div>
+    <div class="creator-footer">
+      <span class="creator-id">Chase Brubaker</span>
+      <span>About this project</span>
+    </div>
+  </main>
+</body>
+</html>

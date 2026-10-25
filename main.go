@@ -57,6 +57,10 @@ func main() {
 		})
 	})
 
+	router.GET("/about", func(ctx *gin.Context) {
+		ctx.HTML(http.StatusOK, "about.tmpl", nil)
+	})
+
 	router.POST("/guess", func(ctx *gin.Context) {
 		var json InputGuess
 		if err := ctx.ShouldBindJSON(&json); err != nil {
@@ -65,6 +69,12 @@ func main() {
 			return
 		}
 		pswd := HackPassword(json.Hash)
+		if pswd == "-1" {
+			err := "Request Timed Out\nMake sure input field is valid"
+			fmtErr := url.QueryEscape(err)
+			ctx.Redirect(http.StatusPermanentRedirect, fmt.Sprintf("/error?msg=%s", fmtErr))
+			return
+		}
 		ctx.JSON(http.StatusOK, gin.H{"password": pswd})
 	})
 

@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Error</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit error</title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-	<h1>OOPS!</h1>
-	An error has occured <br/>
-	Error: {{ .error }}
-
+  <main class="panel error">
+    <p class="bootline"><span class="prompt">root@security-lab:~$</span> audit_status --check <span aria-hidden="true">!</span></p>
+    <p class="eyebrow">Security lab / error</p>
+    <h1>Process interrupted</h1>
+    <div class="status">An error occurred</div>
+    <p>The demo could not finish this operation.</p>
+    <div class="codebox">
+      <span class="key">Diagnostic message</span>
+      <code>{{ .error }}</code>
+    </div>
+    <div class="creator-footer">
+      <span class="creator-id">
+          <a href="/about">Chase Brubaker</a>
+      </span>
+      <span class="footer-note">Check input and retry</span>
+    </div>
+  </main>
 </body>
 </html>

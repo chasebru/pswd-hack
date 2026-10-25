@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jalen's Password Hacker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit in progress</title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-    hacking password
-	hash: {{ .hash }}
-
-	<script src="/assets/hacking.js"></script>
+  <main class="panel">
+    <p class="bootline"><span class="prompt">root@security-lab:~$</span> ./audit --local <span aria-hidden="true">✓</span></p>
+    <p class="eyebrow">Security lab / 02</p>
+    <h1>Audit in progress<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="terminal-line">Running local demonstration...</p>
+    <div class="status">Processing</div>
+    <div class="codebox">
+      <span class="key">Test hash</span>
+      <code>{{ .hash }}</code>
+    </div>
+    <section class="loading-wrap" aria-label="Demo loading animation">
+      <div class="loading-label">
+        <span>Analyzing test data</span>
+        <strong>RUNNING</strong>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Visual loading animation">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="scanner" role="status" aria-live="polite">
+        <span class="scanner-orb" aria-hidden="true"></span>
+        <div class="scanner-copy">
+          <strong>Demo process active</strong>
+          <span>Waiting for the audit result</span>
+        </div>
+      </div>
+    </section>
+    <p>Keep this page open while the demo runs.</p>
+    <div class="creator-footer">
+      <span class="creator-id">
+          <a href="/about">Chase Brubaker</a>
+      </span>
+      <span class="footer-note">Local demo · synthetic data</span>
+    </div>
+  </main>
+  <script src="/assets/hacking.js"></script>
 </body>
 </html>
