@@ -1,4 +1,4 @@
-module password-cracker
+module github.com/chasebru/pswd-hack
 
 go 1.25.7
 
